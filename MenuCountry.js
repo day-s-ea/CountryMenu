@@ -114,11 +114,17 @@ function addEvent() {
   menuItems.forEach(function (item) {
     item.parentElement.addEventListener("click", function (e) {
       e.stopPropagation();
+      // Chiudi tutte le altre voci di menu
+      menuItems.forEach(function (otherItem) {
+        if (otherItem !== item) {
+          otherItem.style.display = "none";
+        }
+      });
       item.style.display = item.style.display === "block" ? "none" : "block";
     });
   });
 
-  //Se schiacci in un punto della pagina si chiude il menù
+  // Se si clicca in un punto qualsiasi della pagina si chiude il menu
   document.addEventListener("click", function (e) {
     menuItems.forEach(function (item) {
       if (!item.parentElement.contains(e.target)) {
