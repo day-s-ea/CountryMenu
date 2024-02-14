@@ -26,6 +26,7 @@ Paesi().then((paesi) => {
       regions[paese.region].push(paese.name.common);
     }
   });
+  console.log(regions);
   GeneraMenu();
   addEvent();
 });
@@ -103,7 +104,7 @@ function ArrayCasual(num, arrayNew, obj) {
 
   //Per creare un array di dati casuale
   while (count < num) {
-    let n = NumeroCasuale(0, num - 1); //Perchè l'index parte da 0
+    let n = NumeroCasuale(0, obj.length - 1); //Perchè l'index parte da 0
     //se c'è mi darà il numero del index altrimenti -1
     if (arrayNew.indexOf(obj[n]) == -1) {
       arrayNew.push(obj[n]);
