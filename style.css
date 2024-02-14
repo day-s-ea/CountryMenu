@@ -35,6 +35,12 @@ ul {
   margin-top: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .introduzione h1 {
+    font-size: 1.5em;
+  }
+}
+
 /* Nav bar */
 
 .menu {
