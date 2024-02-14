@@ -1,11 +1,51 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Generic */
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.fnt-color-blu {
+  color: #008cba;
+  font-weight: bold;
+}
+
+.fnt-color-verde {
+  color: #00b800;
+  font-weight: bold;
+}
+
+/* Practices */
+
 ul {
   padding: 0;
 }
+
+/* Introduzione */
+
+.introduzione {
+  margin-bottom: 20px;
+}
+
+.introduzione h1 {
+  font-size: 40px;
+  margin-top: 0;
+}
+
+/* Nav bar */
 
 .menu {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu li {
@@ -47,4 +87,10 @@ ul {
 
 .menu .submenu li a {
   padding: 10px 20px;
+  border: 2px solid #00b800;
+}
+
+.menu .submenu li a:hover {
+  background-color: #00b800;
+  color: white;
 }

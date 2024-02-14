@@ -80,6 +80,10 @@ function GeneraSottotitoli(aText, liElemento) {
     let aSottotitoli = document.createElement("a");
 
     aSottotitoli.textContent = stateCasual[i];
+    aSottotitoli.href =
+      "https://www.google.com/maps/search/?api=1&query=" +
+      aSottotitoli.textContent;
+    aSottotitoli.setAttribute("target", "_blank");
     liSottotitoli.appendChild(aSottotitoli);
     ulSottotitoli.appendChild(liSottotitoli);
   }
@@ -121,6 +125,11 @@ function addEvent() {
         }
       });
       item.style.display = item.style.display === "block" ? "none" : "block";
+    });
+
+    // Evita che il click sulla sottovoce si propaghi e chiuda il menu
+    item.addEventListener("click", function (e) {
+      e.stopPropagation();
     });
   });
 
