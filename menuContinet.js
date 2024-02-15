@@ -58,6 +58,7 @@ function GenerateMenuContinent(continentStateObj, continentArr) {
   // Genera un array di nomi di continenti casuali
   let continentRandomArr = [];
   let continentRandomNumber = RandomNumber(1, 6);
+  console.log("Continenti: " + continentRandomNumber);
   ContinentStateRandomArr(
     continentArr,
     continentRandomArr,
@@ -87,6 +88,7 @@ function GenerateMenuState(continentStateObj, nameContinent, liContinent) {
   let stateRandomArr = [];
   // Numero casuale di stati da visualizzare
   let stateRandomNumber = RandomNumber(1, 10);
+  console.log(nameContinent + ": " + stateRandomNumber);
   // Crea un elemento di lista per il menu delle sotto-voci degli stati
   let ulState = document.createElement("ul");
   ulState.classList.add("submenu");
