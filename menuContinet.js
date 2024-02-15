@@ -15,6 +15,16 @@ async function fetchCountriesData() {
   }
 }
 
+// Recupera i dati dei paesi e avvia il processo di elaborazione
+fetchCountriesData().then((paesi) => {
+  // Estrae l'oggetto dei continenti e l'array dei nomi dei continenti dall'output della funzione processCountriesData
+  const { continentStateObj, continentArr } = processCountriesData(paesi);
+  // Genera il menu basato sui continenti
+  GenerateMenuContinent(continentStateObj, continentArr);
+  // Aggiunge gli eventi di apertura e chiusura al menu
+  AddEventOpenClose();
+});
+
 // Funzione per elaborare i dati dei paesi
 function processCountriesData(paesi) {
   // Oggetto per memorizzare i continenti e i relativi stati
@@ -39,16 +49,6 @@ function processCountriesData(paesi) {
   // Restituisce un oggetto contenente l'oggetto dei continenti e l'array dei nomi dei continenti
   return { continentStateObj, continentArr };
 }
-
-// Recupera i dati dei paesi e avvia il processo di elaborazione
-fetchCountriesData().then((paesi) => {
-  // Estrae l'oggetto dei continenti e l'array dei nomi dei continenti dall'output della funzione processCountriesData
-  const { continentStateObj, continentArr } = processCountriesData(paesi);
-  // Genera il menu basato sui continenti
-  GenerateMenuContinent(continentStateObj, continentArr);
-  // Aggiunge gli eventi di apertura e chiusura al menu
-  AddEventOpenClose();
-});
 
 /* GENERA MENU --------------------------------------------------------------------------*/
 
@@ -118,7 +118,7 @@ function GenerateMenuState(continentStateObj, nameContinent, liContinent) {
   liContinent.appendChild(ulState);
 }
 
-/* altre funzioni */
+/* altre funzioni --------------------------------------------------------------------------*/
 
 function RandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
